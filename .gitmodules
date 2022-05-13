@@ -1,0 +1,3 @@
+[submodule "non-tight-decision-benchmarks"]
+	path = non-tight-decision-benchmarks
+	url = https://github.com/asptools/non-tight-decision-benchmarks
