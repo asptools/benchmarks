@@ -6,6 +6,7 @@
 % Identify atoms and literals
 literal(L) :- lit(_,_,L).  negative(n(A)) :- literal(n(A)).
 atom(L) :- literal(L), not negative(L).
+atom(A) :- negative(n(A)).
 
 % Determine arcs, nodes, and the start node
 arc(X,Y) :- lit(X,Y,_).
