@@ -1,0 +1,13 @@
+size(14).
+hole(7,13).
+fill(1,3).
+fill(1,4).
+fill(2,14).
+hole(9,12).
+fill(1,14).
+hole(4,13).
+fill(11,3).
+fill(9,7).
+hole(9,6).
+hole(14,8).
+fill(8,13).
