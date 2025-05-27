@@ -1,4 +1,4 @@
-# icmethod
+# DAO-XAI 2024
 
 ## How to use
 + To generate the splits used in the 10CV run `preprocess_data.ipynb` in the folder `original_data_sets`.
