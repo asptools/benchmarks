@@ -3,10 +3,12 @@
 Benchmark problems related to Explainability
 
 Shell Scripts:
-1. *gen-dominating.sh* - Generate an instance of Dominating Set
-2. *gen-queens.sh* - Generate an instance of n-Queens
-3. *run-neg.sh* - Explain a negative instance
-4. *run-pos.sh* - Explain a positive instance
+1. *check-neg.sh* - Check that an instance is negative
+2. *check-pos.sh* - Check that an instance is positive
+3. *gen-dominating.sh* - Generate an instance of Dominating Set
+4. *gen-queens.sh* - Generate an instance of n-Queens
+5. *run-neg.sh* - Explain a negative instance
+6. *run-pos.sh* - Explain a positive instance
 
 ASP Encodings:
 1. *clause.lp* - Domains related to (reified) clauses
