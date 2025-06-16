@@ -37,9 +37,9 @@ r=$RANDOM
 $BIN/planar $n $r > $TMP/graph-$$.lp
 
 $BIN/gringo --output smodels -cm=1 $TMP/graph-$$.lp $ENC/dominating.lp \
-| $BIN/clasp --opt-strat=usc | fgrep 'in(' | $SCRIPT/asf in > $TMP/optimum-$$.lp
+| $BIN/clasp --opt-strat=usc | grep -F 'in(' | $SCRIPT/asf in > $TMP/optimum-$$.lp
 
-k=`fgrep in $TMP/optimum-$$.lp | wc -l`
+k=`grep -F in $TMP/optimum-$$.lp | wc -l`
 
 $BIN/gringo --output smodels $TMP/graph-$$.lp $ENC/dominating.lp \
 | $BIN/lpstrip | $BIN/satgrnd | $BIN/lpreify -d \
@@ -51,13 +51,13 @@ echo "base($n)." \
 | $BIN/gringo - $TMP/optimum-$$.lp select-in.lp \
 | $BIN/clasp --seed=$r --rand-freq=0.1 \
 | sed 's/newin(/plit(in(/g;s/newout(/nlit(in(/g;s/)/))/g' \
-| fgrep 'lit(' | $SCRIPT/asf plit nlit >> $TMP/$NAME-neg-n$n-s$r-k$k.lp
+| grep -F 'lit(' | $SCRIPT/asf plit nlit >> $TMP/$NAME-neg-n$n-s$r-k$k.lp
 
 echo "base($n)." \
 | $BIN/gringo -cp=1 - $TMP/optimum-$$.lp select-in.lp \
 | $BIN/clasp --seed=$r --rand-freq=0.1 \
 | sed 's/newin(/plit(in(/g;s/newout(/nlit(in(/g;s/)/))/g' \
-| fgrep 'lit(' | $SCRIPT/asf plit nlit >> $TMP/$NAME-pos-n$n-s$r-k$k.lp
+| grep -F 'lit(' | $SCRIPT/asf plit nlit >> $TMP/$NAME-pos-n$n-s$r-k$k.lp
 
 # Generate
 

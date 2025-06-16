@@ -20,6 +20,6 @@
 
 source path.sh
 
-$BIN/gringo -Wnone $ENC/check-neg.lp $* | $BIN/clasp | fgrep SAT
+$BIN/gringo -Wnone $ENC/check-neg.lp $* | $BIN/clasp | grep -F SAT
 
 # The negative test is passed if clasp returns "UNSATISFIABLE"
