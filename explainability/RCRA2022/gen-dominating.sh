@@ -59,12 +59,18 @@ echo "base($n)." \
 | sed 's/newin(/plit(in(/g;s/newout(/nlit(in(/g;s/)/))/g' \
 | fgrep 'lit(' | $SCRIPT/asf plit nlit >> $TMP/$NAME-pos-n$n-s$r-k$k.lp
 
+# Generate
+
 mv -f $TMP/$NAME-pos-n$n-s$r-k$k.lp $TMP/tmp-$$.lp
 $SCRIPT/rmint $TMP/tmp-$$.lp > $TMP/$NAME-pos-n$n-s$r-k$k.lp 
 rm -f $TMP/tmp-$$.lp
+echo "Generated $TMP/$NAME-pos-n$n-s$r-k$k.lp"
 
 mv -f $TMP/$NAME-neg-n$n-s$r-k$k.lp $TMP/tmp-$$.lp
 $SCRIPT/rmint $TMP/tmp-$$.lp > $TMP/$NAME-neg-n$n-s$r-k$k.lp 
 rm -f $TMP/tmp-$$.lp
+echo "Generated $TMP/$NAME-neg-n$n-s$r-k$k.lp"
+
+# Clean-up
 
 rm -f $TMP/graph-$$.lp $TMP/optimum-$$.lp

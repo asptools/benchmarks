@@ -54,12 +54,18 @@ $BIN/gringo -cn=$n -cp=1 $TMP/solution-$$.lp select-queen.lp \
 | sed 's/newqueen(/plit(queen(/g;s/noqueen(/nlit(queen(/g;s/)/))/g' \
 | fgrep 'lit(' | $SCRIPT/asf plit nlit >> $TMP/$NAME-pos-n$n-s$r.lp
 
+# Generate
+
 mv -f $TMP/$NAME-pos-n$n-s$r.lp $TMP/tmp-$$.lp
 $SCRIPT/rmint $TMP/tmp-$$.lp > $TMP/$NAME-pos-n$n-s$r.lp
 rm -f $TMP/tmp-$$.lp
+echo "Generated $TMP/$NAME-pos-n$n-s$r.lp"
 
 mv -f $TMP/$NAME-neg-n$n-s$r.lp $TMP/tmp-$$.lp
 $SCRIPT/rmint $TMP/tmp-$$.lp > $TMP/$NAME-neg-n$n-s$r.lp
 rm -f $TMP/tmp-$$.lp
+echo "Generated $TMP/$NAME-neg-n$n-s$r.lp"
+
+# Clean-up
 
 rm -f $TMP/solution-$$.lp
