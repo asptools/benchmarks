@@ -1,5 +1,5 @@
 #!/bin/bash
 
-gringo -Wnone $* $ENC/remove-internal.lp | clasp \
+$BIN/gringo -Wnone $* $ENC/remove-internal.lp | clasp \
 | fgrep new | sed 's/new//g' | $SCRIPT/asf
 

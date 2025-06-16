@@ -4,4 +4,4 @@
 
 pat=`echo $* | sed 's/ /|/g'` 
 
-cat | sed 's/ /'"\n"'/g' | sed 's/)$/)./g' | egrep "$pat"
+cat | sed 's/ /'"\n"'/g' | sed 's/)$/)./g' | grep -E "$pat"
