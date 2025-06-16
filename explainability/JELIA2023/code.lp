@@ -20,7 +20,14 @@
 %
 % Main program for selecting an explanation and measuring relative error
 
-#const l=10.
+% Sample USAGE: gringo -cl=5 code.lp data-credit.lp | clasp
+% 
+% Potentially useful options of clasp (see --help=3 for details):
+%    -t <number of threads>
+%    --opt-strat=<strategy>
+%    --opt-mode=optN
+
+#const l=10. % Maximum formula length - can be reset with option -cl=<number>
 node(1..l).
 root(l).
 
