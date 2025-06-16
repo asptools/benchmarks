@@ -24,7 +24,7 @@ source path.sh
 
 NAME=qs
 
-if echo "$1" | egrep '^0$|^[1-9][0-9]*$' > /dev/null
+if echo "$1" | fgrep -E '^0$|^[1-9][0-9]*$' > /dev/null
 then
   n=$1
 else
