@@ -23,3 +23,10 @@ source path.sh
 $BIN/gringo -Wnone $ENC/check-neg.lp $* | $BIN/clasp | grep -F SAT
 
 # The negative test is passed if clasp returns "UNSATISFIABLE"
+
+if test ${PIPESTATUS[1]} -eq 20
+then
+  echo "=> Passed!"
+else
+  echo "=> Failed!"
+fi

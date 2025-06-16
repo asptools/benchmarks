@@ -23,3 +23,10 @@ source path.sh
 $BIN/gringo -Wnone $ENC/check-pos.lp $* | $BIN/clasp | grep -F SAT
 
 # The positive test is passed if clasp returns "SATISFIABLE"
+
+if test ${PIPESTATUS[1]} -eq 30
+then
+  echo "=> Passed!"
+else
+  echo "=> Failed!"
+fi
