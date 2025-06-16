@@ -1,5 +1,5 @@
-# benchmarks
-Metarepository for benchmark problems related to ASPTOOLS. Some specific (non-spacious) ASP benchmarks reside in this repository.
+# Benchmarks
+This is a metarepository for benchmark problems related to ASPTOOLS. Some specific (non-spacious) ASP benchmarks reside in this repository.
 
 1. *explainability / DAOXAI2024* - Computing global explanations for data sets; see (Jaakkola et al., 2024)
 2. *explainability / JELIA2023* - An encoding for computing global explanations for data sets; see (Jaakkola et al., 2023)
