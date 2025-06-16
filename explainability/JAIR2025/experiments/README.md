@@ -1,4 +1,4 @@
-# RCRA 2022
+# JAIR 2025 / RCRA 2022
 Benchmark problems related to Explainability
 
 Problem Instances Used in the Article (SAT Instances Encoded by ASP facts)
